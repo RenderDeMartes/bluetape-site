@@ -5,7 +5,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/bluetaperigging/public_html/
-    - /bin/cp index.html 404.html robots.txt sitemap.xml .htaccess $DEPLOYPATH
+    - /bin/cp index.html 404.html robots.txt sitemap.xml .htaccess google693ef86f823ca3aa.html $DEPLOYPATH
     - /bin/cp -R approach contact creature-rigging custom-autorig-development $DEPLOYPATH
     - /bin/cp -R facial-rigging game-character-rigging mgear-rigging rig-troubleshooting $DEPLOYPATH
     - /bin/cp -R rigging-outsourcing services unreal-engine-rigging work $DEPLOYPATH
