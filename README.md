@@ -30,5 +30,4 @@ GitHub `RenderDeMartes/bluetape-site` → cPanel account `bluetaperigging` (Git 
 4. Check it landed: `curl -sI https://bluetaperigging.com/assets/css/site.css`
 
 New page folders must be added to `.cpanel.yml` or they never reach the server.
-The old WordPress files sit in `/home/bluetaperigging/wordpress-site-2026-09-23/` (moved, not deleted);
-its database is untouched.
+The old WordPress install was removed on 2026-09-23 (files, database and DB user).
