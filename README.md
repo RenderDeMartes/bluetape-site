@@ -15,6 +15,6 @@ writes `sitemap.xml` and `robots.txt`.
 - Every credit is real; free assets are "in audit" with no date.
 
 ## Still to confirm before going live
-- `hello@bluetaperigging.com` is a placeholder (set in `assets/js/site.js`).
+- Contact address is `info@bluetaperigging.com`, assembled in `assets/js/site.js`.
 - The contact form opens the visitor's mail app (mailto), no server.
 - Schweppes still is hotlinked from YouTube (`THUMB` in gen.py); self-host a still to drop it.

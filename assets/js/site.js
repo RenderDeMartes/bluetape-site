@@ -15,7 +15,7 @@
   }
 
   /* Email is assembled in the browser so scrapers never see it in the HTML. */
-  var mail = ['hello', 'bluetaperigging.com'].join('@');
+  var mail = ['info', 'bluetaperigging.com'].join('@');
   Array.prototype.forEach.call(document.querySelectorAll('[data-mail]'), function (el) {
     el.href = 'mailto:' + mail;
     if (!el.textContent.trim()) el.textContent = mail;
