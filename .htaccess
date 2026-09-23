@@ -17,6 +17,11 @@ ErrorDocument 404 /404.html
   # the old WordPress install -> home
   RewriteRule ^(wp-admin|wp-includes|wp-content|wp-login\.php|xmlrpc\.php|wp-json|feed)(/.*)?$ / [R=301,L]
   RewriteRule ^mutant-tools/?$ /approach/ [R=301,L]
+  # old WordPress leftovers Search Console still crawls
+  RewriteRule ^comments/feed(/.*)?$ / [R=301,L]
+  RewriteRule ^page/\d+/?$ / [R=301,L]
+  RewriteRule ^\d+/?$ / [R=301,L]
+  RewriteRule ^\*/?$ / [R=301,L]
 
   # trailing slash on directory URLs
   RewriteCond %{REQUEST_FILENAME} !-f
