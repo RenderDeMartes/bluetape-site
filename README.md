@@ -18,3 +18,17 @@ writes `sitemap.xml` and `robots.txt`.
 - Contact address is `info@bluetaperigging.com`, assembled in `assets/js/site.js`.
 - The contact form opens the visitor's mail app (mailto), no server.
 - Schweppes still is hotlinked from YouTube (`THUMB` in gen.py); self-host a still to drop it.
+
+## Deploy
+
+GitHub `RenderDeMartes/bluetape-site` → cPanel account `bluetaperigging` (Git Version Control,
+`/home/bluetaperigging/repositories/bluetape-site`) → `public_html/` via `.cpanel.yml`.
+
+1. `python gen.py`, commit, `git push`
+2. cPanel → Git™ Version Control → bluetape-site → Pull or Deploy → **Update from Remote**
+3. Same tab → **Deploy HEAD Commit**
+4. Check it landed: `curl -sI https://bluetaperigging.com/assets/css/site.css`
+
+New page folders must be added to `.cpanel.yml` or they never reach the server.
+The old WordPress files sit in `/home/bluetaperigging/wordpress-site-2026-09-23/` (moved, not deleted);
+its database is untouched.
