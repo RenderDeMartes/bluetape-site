@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unreal Engine Rigging — Control Rig &amp; Blueprints | Bluetape</title>
+<meta name="description" content="Unreal Engine rigging: Control Rig setup, clean skeleton exports from Maya, Blueprint integration and engine-side rig checks.">
+<link rel="canonical" href="https://bluetaperigging.com/unreal-engine-rigging/">
+<meta name="theme-color" content="#0a0f17">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unreal Engine Rigging — Control Rig &amp; Blueprints | Bluetape">
+<meta property="og:description" content="Unreal Engine rigging: Control Rig setup, clean skeleton exports from Maya, Blueprint integration and engine-side rig checks.">
+<meta property="og:url" content="https://bluetaperigging.com/unreal-engine-rigging/">
+<meta property="og:image" content="https://bluetaperigging.com/assets/img/hero-rig.webp">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=a25bbf7572">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Unreal Engine", "serviceType": "Unreal Engine", "description": "Unreal Engine rigging: Control Rig setup, clean skeleton exports from Maya, Blueprint integration and engine-side rig checks.", "url": "https://bluetaperigging.com/unreal-engine-rigging/", "areaServed": "Worldwide", "provider": {"@type": "Organization", "name": "Bluetape Rigging Studio", "url": "https://bluetaperigging.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you set up Control Rig in Unreal Engine?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for in-engine animation, procedural adjustments and post-import fixes, where the project needs it."}}, {"@type": "Question", "name": "Can you rig to our existing Unreal skeleton?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rigging to a shared project skeleton keeps animation compatible across characters."}}, {"@type": "Question", "name": "Do you also build the Maya animation rig?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Usually the Maya rig drives the export skeleton, and both are delivered together."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluetaperigging.com/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://bluetaperigging.com/services/"}, {"@type": "ListItem", "position": 3, "name": "Unreal Engine", "item": "https://bluetaperigging.com/unreal-engine-rigging/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__mark" href="/" aria-label="Bluetape Rigging Studio — home">
+      <img class="nav__logo" src="/assets/img/logo.webp" alt="" width="40" height="43">
+      <span class="nav__name">BLUETAPE<small>RIGGING STUDIO</small></span>
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a><a href="/work/">Work</a><a href="/approach/">Approach</a>
+      <a class="btn btn--solid" href="/contact/">Start a project</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="phero">
+  <div class="wrap phero__in">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span><span>Unreal Engine</span></nav>
+      <span class="kicker">Unreal Engine</span>
+      <h1>Unreal Engine rigging and Control Rig.</h1>
+    </div>
+    <div>
+      <p class="phero__lead">Characters that go from Maya into Unreal without surprises, with Control Rig and Blueprint integration where your project needs to animate or adjust in engine.</p>
+      <div class="btn-row"><a class="btn btn--solid" href="/contact/">Start a project <span class="arr">→</span></a><a class="btn" href="/work/">See the work</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap srow" style="padding-block:0;border:0">
+    <div class="srow__media"><img src="/assets/img/game-rig.webp" alt="" loading="lazy"></div>
+    <div data-reveal><span class="kicker">What you get</span><h2 class="section__title">What we deliver</h2><ul class="check" style="margin-top:32px"><li>Clean skeleton exports from Maya into Unreal</li><li>Control Rig setups for in-engine animation and adjustment</li><li>Blueprint integration for rig-driven behaviour</li><li>Morph targets and correctives set up for the engine</li><li>Checks on the exported skeleton before delivery</li><li>Rigs that fit an existing project skeleton</li></ul></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap split" style="align-items:start">
+    <div class="prose" data-reveal><span class="kicker">How we approach it</span><h3>Two rigs, one character</h3><p>Most game characters have an animation rig in Maya and a runtime skeleton in Unreal. We build both so they agree: the animation rig drives an export skeleton that is checked before it ever reaches the engine.</p><h3>Control Rig where it earns it</h3><p>Control Rig is useful for in-engine animation, procedural adjustments and fixes after import. We add it where the project actually needs it rather than duplicating the Maya rig for its own sake.</p><h3>Found in Maya, not in the engine</h3><p>Joint count, orientation, bind pose, naming and morph target names are all validated before delivery. Problems that would otherwise surface during integration get fixed in Maya first.</p></div>
+    <aside data-reveal="120"><span class="kicker">A good fit when</span><ul class="check" style="margin-top:28px"><li>Imports into Unreal keep breaking or drifting</li><li>You want animators to work in engine with Control Rig</li><li>Characters need to share an existing project skeleton</li><li>Correctives and morph targets need to survive the export</li></ul></aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split" style="align-items:start">
+    <div data-reveal><span class="kicker">FAQ</span><h2 class="section__title">Questions studios ask</h2></div>
+    <div class="faq" data-reveal="120"><details><summary>Do you set up Control Rig in Unreal Engine?</summary><p>Yes, for in-engine animation, procedural adjustments and post-import fixes, where the project needs it.</p></details><details><summary>Can you rig to our existing Unreal skeleton?</summary><p>Yes. Rigging to a shared project skeleton keeps animation compatible across characters.</p></details><details><summary>Do you also build the Maya animation rig?</summary><p>Yes. Usually the Maya rig drives the export skeleton, and both are delivered together.</p></details></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <span class="kicker">More services</span>
+    <ul class="stack stack--links"><li><a href="/rigging-outsourcing/">Rigging outsourcing</a></li><li><a href="/creature-rigging/">Creature &amp; animal rigging</a></li><li><a href="/game-character-rigging/">Game character rigging</a></li><li><a href="/facial-rigging/">Facial rigging</a></li><li><a href="/mgear-rigging/">mGear rigging</a></li><li><a href="/custom-autorig-development/">Custom autorig development</a></li><li><a href="/rig-troubleshooting/">Rig rescue &amp; troubleshooting</a></li></ul>
+  </div>
+</section>
+<section class="cta">
+  <div class="wrap cta__in">
+    <div data-reveal>
+      <span class="kicker">Next step</span>
+      <h2>Send us your asset list.</h2>
+    </div>
+    <div data-reveal="120">
+      <p>How many characters, which engine, when it’s due, and what has already gone wrong. We’ll come back with what we think it takes, and whether we’re the right studio for it.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" href="/contact/">Start a project <span class="arr">→</span></a>
+        <a class="btn" data-mail href="/contact/">Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <a class="nav__mark" href="/"><img class="nav__logo" src="/assets/img/logo.webp" alt="" width="40" height="43"><span class="nav__name">BLUETAPE<small>RIGGING STUDIO</small></span></a>
+      <p>Boutique character rigging for VFX, animation and games. Maya and Unreal Engine pipelines, working remotely with studios worldwide.</p>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul><li><a href="/services/">Services</a></li><li><a href="/work/">Work</a></li><li><a href="/approach/">Approach</a></li><li><a href="/contact/">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul><li><a href="/rigging-outsourcing/">Rigging outsourcing</a></li><li><a href="/creature-rigging/">Creature &amp; animal rigging</a></li><li><a href="/game-character-rigging/">Game character rigging</a></li><li><a href="/facial-rigging/">Facial rigging</a></li><li><a href="/mgear-rigging/">mGear rigging</a></li><li><a href="/unreal-engine-rigging/">Unreal Engine rigging</a></li><li><a href="/custom-autorig-development/">Custom autorig development</a></li><li><a href="/rig-troubleshooting/">Rig rescue &amp; troubleshooting</a></li></ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul><li><a data-mail href="/contact/"></a></li><li><a href="/contact/">Start a project</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot__base"><span>© 2026 Bluetape Rigging Studio</span><span>Remote · working worldwide</span></div>
+</footer>
+<script src="/assets/js/site.js?v=b8661c61ac" defer></script>
+</body>
+</html>
