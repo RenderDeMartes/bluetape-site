@@ -11,4 +11,6 @@ return [
     'key'       => 'REPLACE_WITH_SECRET',          // same value the Pi sends as ?k=
     'file'      => __DIR__ . '/bt_heartbeat.dat',  // last-seen timestamp, outside public_html
     'threshold' => 150,                            // seconds; Pi beats every 60s, 2 misses = offline
+    'email'     => 'you@example.com',              // where api/alert.php (cron) sends down/up alerts
+    'from'      => 'alertas@bluetaperigging.com',  // From: address (a domain address delivers better)
 ];
