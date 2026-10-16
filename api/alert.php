@@ -1,15 +1,13 @@
 <?php
-/**
- * Offline e-mail alert, run by a cPanel cron job (every ~2 min):
- *
- *   */2 * * * * /usr/local/bin/php /home/bluetaperigging/public_html/api/alert.php >/dev/null 2>&1
- *
- * Reads the same heartbeat file as status.php and e-mails ONLY when the state
- * flips (up->down and down->up), using a small state file so it never spams.
- *
- * CLI-only: refuses to run over the web so nobody can trigger mail by hitting
- * the URL.
- */
+// Offline e-mail alert, run by a cPanel cron job every ~2 minutes:
+//   /usr/local/bin/php /home/bluetaperigging/public_html/api/alert.php >/dev/null 2>&1
+// (set the cron minute field to a 2-minute interval in the cPanel UI).
+//
+// Reads the same heartbeat file as status.php and e-mails ONLY when the state
+// flips (up->down and down->up), using a small state file so it never spams.
+//
+// CLI-only: refuses to run over the web so nobody can trigger mail by hitting
+// the URL.
 if (PHP_SAPI !== 'cli') {
     http_response_code(403);
     exit("cli only\n");
