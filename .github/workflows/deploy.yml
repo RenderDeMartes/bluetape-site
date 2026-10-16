@@ -1,0 +1,53 @@
+name: Deploy to cPanel
+
+# Auto-deploy on every push to master: tell cPanel to pull from GitHub
+# ("Update from Remote") and then run .cpanel.yml ("Deploy HEAD Commit"),
+# the same two buttons as the Git Version Control UI — via cPanel's UAPI.
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   CPANEL_HOST       reeldemiercoles.com:2083
+#   CPANEL_USER       the cPanel username (shown top-right in cPanel)
+#   CPANEL_API_TOKEN  a cPanel API token (Security -> Manage API Tokens)
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions: {}
+
+concurrency:
+  group: cpanel-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+      CPANEL_USER: ${{ secrets.CPANEL_USER }}
+      CPANEL_TOKEN: ${{ secrets.CPANEL_API_TOKEN }}
+      REPO_ROOT: /home/bluetaperigging/repositories/bluetape-site
+      BRANCH: master
+    steps:
+      - name: Update from remote, then deploy
+        run: |
+          set -euo pipefail
+          auth="Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}"
+
+          echo "== Update from remote =="
+          curl -sS --fail-with-body -H "$auth" \
+            --data-urlencode "repository_root=${REPO_ROOT}" \
+            --data-urlencode "branch=${BRANCH}" \
+            "https://${CPANEL_HOST}/execute/VersionControl/update" | tee update.json
+          echo
+
+          echo "== Deploy (.cpanel.yml) =="
+          curl -sS --fail-with-body -H "$auth" \
+            --data-urlencode "repository_root=${REPO_ROOT}" \
+            "https://${CPANEL_HOST}/execute/VersionControlDeployment/create" | tee deploy.json
+          echo
+
+          # UAPI reports success as "status":1 — fail the job otherwise.
+          grep -q '"status":1' deploy.json || { echo "::error::cPanel deploy call did not report success"; exit 1; }
+          echo "Deploy queued on cPanel."
