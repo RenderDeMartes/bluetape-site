@@ -2,3 +2,9 @@ __pycache__/
 Thumbs.db
 .DS_Store
 *.zip
+
+# Live secret + runtime state never belong in this (public) repo.
+bt_config.php
+api/bt_config.php
+api/bt_heartbeat.dat
+*.dat

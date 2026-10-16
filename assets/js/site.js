@@ -21,6 +21,25 @@
     if (!el.textContent.trim()) el.textContent = mail;
   });
 
+  /* Live status dot: ask the server whether the studio Pi is reporting in.
+     Green pulse = up (stronger once confirmed), solid red = down. If the check
+     fails we leave the default green pulse so a broken endpoint never alarms. */
+  var dot = document.querySelector('.dot-live');
+  if (dot && window.fetch) {
+    var poll = function () {
+      fetch('/api/status.php', { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          /* Strict: null/unknown leaves the default pulse untouched. */
+          dot.classList.toggle('is-up', d.online === true);
+          dot.classList.toggle('is-down', d.online === false);
+        })
+        .catch(function () {});
+    };
+    poll();
+    setInterval(poll, 30000);
+  }
+
   /* Click-to-play trailers. No request to YouTube until someone asks. */
   document.addEventListener('click', function (e) {
     var btn = e.target.closest && e.target.closest('.play');
